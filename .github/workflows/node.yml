@@ -16,8 +16,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: 'AKIAZQSXQGB4O4LICDNC'
-          aws-secret-access-key: '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'
+          aws-access-key-id: 'AKIAZQSXQGB4IPTPHIX4'
+          aws-secret-access-key: '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'
           aws-region: ap-south-1
       - name: npm install
         env:
@@ -27,5 +27,5 @@ jobs:
       - name: deploy 
         run: |
           cd ./../.
-          zip -r deploy.zip ./../../../Tech/*
+          zip -r deploy.zip ./LAMBDA-ACTION/*
           aws lambda update-function-code --function-name=arn:aws:lambda:ap-south-1:654092284024:function:abc --zip-file=fileb://deploy.zip
