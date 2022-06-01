@@ -1,11 +1,4 @@
-const express = require('express')
-const app = express()
-const port = 3000
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+exports.handler =  async function(event, context) {
+    console.log("EVENT: \n" + JSON.stringify(event, null, 2))
+    return context.logStreamName
+  }
